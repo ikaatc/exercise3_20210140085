@@ -66,7 +66,7 @@ namespace exercise3_20210140085
         }
         public bool Search(int rollNo, ref Node previous, ref Node current)
         {
-            for (previous = current = LAST.next; current != LAST;
+            for (previous = current = LAST.next; current != null;
                 previous = current, current = current.next)
             {
                 if (rollNo == current.rollNumber)
