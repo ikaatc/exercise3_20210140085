@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace exercise3_20210140085
 {
+    class Node
+    {
+        public int rollNumber;
+        public string name;
+        public Node next;
+    }
     internal class Program
     {
         static void Main(string[] args)
