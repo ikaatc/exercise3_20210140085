@@ -77,6 +77,19 @@ namespace exercise3_20210140085
             else
                 return (false);
         }
+        public void delNode(int rollNo)
+        {
+            Node previous, current;
+            previous = current = null;
+            if (Search(rollNo, ref previous, ref current) == false)
+                return;
+            previous.next = current.next;
+            if (current == LAST)
+            {
+                LAST = LAST.next;
+            }
+            return;
+        }
         public bool listEmpty()
         {
             if (LAST == null)
