@@ -106,10 +106,9 @@ namespace exercise3_20210140085
                 Console.WriteLine("\nRecords in the list are: \n");
                 Node currentNode;
                 currentNode = LAST.next;
-                while (currentNode != LAST)
+                while (currentNode != null)
                 {
-                    Console.Write(currentNode.rollNumber + " " +
-                        currentNode.name + "\n");
+                    Console.Write(currentNode.rollNumber + " " + currentNode.name + "\n");
                     currentNode = currentNode.next;
                 }
                 Console.Write(LAST.rollNumber + " " + LAST.name + "\n");
