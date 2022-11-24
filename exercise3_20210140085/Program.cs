@@ -108,6 +108,18 @@ namespace exercise3_20210140085
                                 }
                             }
                             break;
+                        case '3':
+                            {
+                                obj.firstNode();
+                            }
+                            break;
+                        case '4':
+                            return;
+                        default:
+                            {
+                                Console.WriteLine("Invalid option");
+                                break;
+                            }
                     }
                 }
                 catch (Exception e)
