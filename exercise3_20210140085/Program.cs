@@ -20,6 +20,50 @@ namespace exercise3_20210140085
         {
             LAST = null;
         }
+        public void addNode()
+        {
+            int rollNo;
+            string nm;
+
+            Console.Write("enter the roll number: ");
+            rollNo = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("enter the name of the students: ");
+            nm = Console.ReadLine();
+
+            Node newNode = new Node();
+
+            newNode.name = nm;
+            newNode.rollNumber = rollNo;
+
+            if (LAST == null || rollNo <= LAST.rollNumber)
+            {
+                if ((LAST != null) && (rollNo == LAST.rollNumber))
+                {
+                    Console.WriteLine("Duplicate roll number not allowed");
+                    return;
+                }
+                newNode.next = LAST;
+                LAST = newNode;
+                return;
+            }
+            Node previous, current;
+            previous = LAST;
+            current = LAST;
+
+            while ((current != null) && (rollNo >= current.rollNumber))
+            {
+                if (rollNo == current.rollNumber)
+                {
+                    Console.WriteLine("Duplicate roll number not allowed");
+                    return;
+                }
+                previous = current;
+                current = current.next;
+            }
+            newNode.next = current;
+            previous.next = newNode;
+        }
         public bool Search(int rollNo, ref Node previous, ref Node current)
         {
             for (previous = current = LAST.next; current != LAST;
