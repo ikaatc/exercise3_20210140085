@@ -82,7 +82,11 @@ namespace exercise3_20210140085
                     char ch = Convert.ToChar(Console.ReadLine());
                     switch (ch)
                     {
-
+                        case '1':
+                            {
+                                obj.traverse();
+                            }
+                            break;
                     }
                 }
                 catch (Exception e)
