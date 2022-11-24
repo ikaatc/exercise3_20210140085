@@ -20,6 +20,19 @@ namespace exercise3_20210140085
         {
             LAST = null;
         }
+        public bool Search(int rollNo, ref Node previous, ref Node current)
+        {
+            for (previous = current = LAST.next; current != LAST;
+                previous = current, current = current.next)
+            {
+                if (rollNo == current.rollNumber)
+                    return (true);
+            }
+            if (rollNo == LAST.rollNumber)
+                return true;
+            else
+                return (false);
+        }
     }
     internal class Program
     {
