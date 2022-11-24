@@ -66,11 +66,20 @@ namespace exercise3_20210140085
                 Console.WriteLine("\nThe first record in the list is:\n\n" +
                     LAST.next.rollNumber + " " + LAST.next.name);
         }
-    }
-    internal class Program
-    {
         static void Main(string[] args)
         {
+            CircularList obj = new CircularList();
+            while (true)
+            {
+                try
+                {
+
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.ToString());
+                }
+            }
         }
     }
 }
