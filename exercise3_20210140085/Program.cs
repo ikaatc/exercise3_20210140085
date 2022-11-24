@@ -33,6 +33,13 @@ namespace exercise3_20210140085
             else
                 return (false);
         }
+        public bool listEmpty()
+        {
+            if (LAST == null)
+                return true;
+            else
+                return false;
+        }
     }
     internal class Program
     {
