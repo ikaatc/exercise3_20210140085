@@ -77,18 +77,18 @@ namespace exercise3_20210140085
             else
                 return (false);
         }
-        public void delNode(int rollNo)
+        public bool delNode(int rollNo)
         {
             Node previous, current;
             previous = current = null;
             if (Search(rollNo, ref previous, ref current) == false)
-                return;
+                return false;
             previous.next = current.next;
             if (current == LAST)
             {
                 LAST = LAST.next;
             }
-            return;
+            return true;
         }
         public bool listEmpty()
         {
@@ -135,7 +135,8 @@ namespace exercise3_20210140085
                     Console.WriteLine("2. Search for a record in the list");
                     Console.WriteLine("3. Display the first record in the list");
                     Console.WriteLine("4. Add data in the list");
-                    Console.WriteLine("5. Exit");
+                    Console.WriteLine("5. Delete data in the list");
+                    Console.WriteLine("6. Exit");
                     Console.WriteLine("\nEnter your choice (1-5): ");
                     char ch = Convert.ToChar(Console.ReadLine());
                     switch (ch)
@@ -177,6 +178,21 @@ namespace exercise3_20210140085
                             }
                             break;
                         case '5':
+                            {
+                                if (obj.listEmpty())
+                                {
+                                    Console.WriteLine("list empty");
+                                }
+                                Console.WriteLine("enter the roll number of" + "the name whose record to be deleted: ");
+                                int rollNo = Convert.ToInt32(Console.ReadLine());
+                                Console.WriteLine();
+                                if (obj.delNode(rollNo) == false)
+                                    Console.WriteLine("record not found");
+                                else
+                                    Console.WriteLine("record with rollnumber" + rollNo + "deleted");
+                            }
+                            break;
+                        case '6':
                             return;
                         default:
                             {
